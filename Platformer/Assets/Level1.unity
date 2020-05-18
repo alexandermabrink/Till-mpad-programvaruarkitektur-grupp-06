@@ -1583,7 +1583,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UserInterface
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1382750136336740947, guid: ac56d7cd7a36b03448d3e7f3e1b8216c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ac56d7cd7a36b03448d3e7f3e1b8216c, type: 3}
 --- !u!1001 &1947091228635745198
 PrefabInstance:

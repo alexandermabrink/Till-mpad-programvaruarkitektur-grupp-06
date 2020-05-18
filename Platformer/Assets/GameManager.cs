@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
         Debug.Log(Environment.MachineName);
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
-
+        Debug.Log("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
  
-        httpClient.GetAsync("localhost:5555/highscoreSet?name=" + Environment.MachineName + "time=" + timerScript.getTime());
+        httpClient.GetAsync("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
       
 
         Death();
