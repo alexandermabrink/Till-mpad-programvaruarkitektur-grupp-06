@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class MovementScript : MonoBehaviour
     float groundRadius = 0.2f;
     public LayerMask whatIsGround;
     public float jumpForce = 150f;
+     GameManager gm;
         
 
 
@@ -27,6 +29,7 @@ public class MovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         facingRight = true;
+        gm = new GameManager();
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class MovementScript : MonoBehaviour
             animator.SetFloat("speed", Mathf.Abs(move));
 
             rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
-            Debug.Log(grounded);
+            //Debug.Log(grounded);
 
             if (move > 0 && !facingRight)
             {
@@ -48,7 +51,7 @@ public class MovementScript : MonoBehaviour
             {
                 Flip();
             }
-            Debug.Log(rb.velocity.y);   
+            //Debug.Log(rb.velocity.y);   
         
     }
 
@@ -72,6 +75,15 @@ public class MovementScript : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if(collision.collider.tag.Equals("Enemy"))
+        {
+            gm.Death();
+        }
     }
 
 
