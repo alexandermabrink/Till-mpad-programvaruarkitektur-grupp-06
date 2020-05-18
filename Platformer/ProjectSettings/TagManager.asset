@@ -8,6 +8,7 @@ TagManager:
   - userInterface
   - timerText
   - fullTimer
+  - highscore
   layers:
   - Default
   - TransparentFX
