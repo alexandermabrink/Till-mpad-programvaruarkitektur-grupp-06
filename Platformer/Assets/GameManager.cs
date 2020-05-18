@@ -15,19 +15,17 @@ public class GameManager : MonoBehaviour
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("fullTimer"), SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void FinishGame()
     {
-        HttpClient httpClient = new HttpClient();
-        Debug.Log(Environment.MachineName);
+        
+        //Getting time and sending to server
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
-        Debug.Log("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
- 
+        HttpClient httpClient = new HttpClient();
         httpClient.GetAsync("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
+        Debug.Log("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
       
 
         Death();
@@ -36,7 +34,10 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
+        //loading first level
         SceneManager.LoadScene("Level1");
+
+        //resetting time
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
         timerScript.Reset();
@@ -44,9 +45,11 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        //Removing UI after start pressed
         GameObject UI = GameObject.FindGameObjectWithTag("userInterface");
         UI.SetActive(false);
 
+        //Starting timer
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
         timerScript.startTimer();

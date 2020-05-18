@@ -39,6 +39,6 @@ public class TimerScript : MonoBehaviour
     }
 
     public string getTime() {
-        return time.ToString();
+        return Math.Round(time).ToString();
     }
 }
