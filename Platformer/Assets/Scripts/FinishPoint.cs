@@ -11,6 +11,7 @@ public class FinishPoint : MonoBehaviour
         if(collision.gameObject.name.Equals("player") && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("FinalLevel"))
         {
             gm.LoadNextLevel();
+            Debug.Log("Ello");
         } else
         {
             gm.FinishGame();
