@@ -10,7 +10,7 @@ public class LoadUsers : MonoBehaviour
     void Start()
     {
         HttpClient httpClient = new HttpClient();
-        var result = httpClient.GetAsync("http://localhost:5555/highscore").Result;
+        var result = httpClient.GetAsync("http://amirs.pro:5555/highscore").Result;
 
         var contents = result.Content.ReadAsStringAsync().Result;
 
