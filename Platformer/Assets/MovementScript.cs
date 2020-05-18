@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementScript : MonoBehaviour
-
-
-
 {
 
     Animator animator;
@@ -21,7 +18,7 @@ public class MovementScript : MonoBehaviour
     float groundRadius = 0.2f;
     public LayerMask whatIsGround;
     public float jumpForce = 150f;
-
+        
 
 
     // Start is called before the first frame update
@@ -35,20 +32,24 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float move = Input.GetAxis("Horizontal");
-        animator.SetFloat("speed", Mathf.Abs(move));
-
-        rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
-        Debug.Log(grounded);
         
-        if(move > 0 && !facingRight)
-        {
-           Flip();
-        }else if(move < 0 && facingRight)   
-        {
-            Flip();
-        }
-        Debug.Log(rb.velocity.y);
+
+            float move = Input.GetAxis("Horizontal");
+            animator.SetFloat("speed", Mathf.Abs(move));
+
+            rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
+            Debug.Log(grounded);
+
+            if (move > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && facingRight)
+            {
+                Flip();
+            }
+            Debug.Log(rb.velocity.y);   
+        
     }
 
 
