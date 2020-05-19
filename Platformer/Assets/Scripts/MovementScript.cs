@@ -15,8 +15,6 @@ public class MovementScript : MonoBehaviour
     public float maxSpeed = 10f;
 
     bool grounded = false;
-    public Transform groundCheck;
-    float groundRadius = 0.2f;
     public LayerMask whatIsGround;
     public float jumpForce = 150f;
      GameManager gm;

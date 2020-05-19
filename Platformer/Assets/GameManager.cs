@@ -10,7 +10,7 @@ using System;
 public class GameManager : MonoBehaviour
 
 {      
-    bool HasEnded = false;
+    
     public void LoadNextLevel()
     {
 
