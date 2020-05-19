@@ -62,6 +62,10 @@ public class MovementScript : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce));
            
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gm.Death();
+        }
         
 
     }
@@ -77,7 +81,6 @@ public class MovementScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if(collision.collider.tag.Equals("Enemy"))
         {
             gm.Death();

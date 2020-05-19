@@ -9,4 +9,14 @@ public class StartGame : MonoBehaviour
     public void onClick() {
         gm.Start();
     }
+
+
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            onClick();
+        }
+    }
 }
