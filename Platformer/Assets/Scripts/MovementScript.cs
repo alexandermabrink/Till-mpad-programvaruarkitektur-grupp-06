@@ -13,7 +13,7 @@ public class MovementScript : MonoBehaviour
     public float speed;
     public bool facingRight;
     public float maxSpeed = 10f;
-
+    static bool canJump = false;
     public float jumpForce = 150f;
     GameManager gm;
     
@@ -56,11 +56,14 @@ public class MovementScript : MonoBehaviour
         {
            SoundManagerScript.PlaySound("playerJump");
             rb.AddForce(new Vector2(0, jumpForce));
+            canJump = true;
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
             gm.Death();
         }
+      
+
     }
 
 
@@ -79,6 +82,14 @@ public class MovementScript : MonoBehaviour
             SoundManagerScript.PlaySound("playerDead");
                 gm.Death();
         }
+        if (collision.collider.tag.Equals("ground") && canJump)
+        {
+            canJump = false;
+            SoundManagerScript.PlaySound("playerLand");
+        }
+        
+        
+    
     }
 
 
