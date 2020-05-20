@@ -1417,6 +1417,11 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7152715171923569843, guid: c5b1abf5c016ecc48978d9181697709e,
+        type: 3}
+      propertyPath: field of view
+      value: 43
+      objectReference: {fileID: 0}
     - target: {fileID: 7663302811488696477, guid: c5b1abf5c016ecc48978d9181697709e,
         type: 3}
       propertyPath: m_Name
