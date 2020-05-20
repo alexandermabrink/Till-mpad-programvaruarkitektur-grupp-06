@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
         timerScript.Reset();
-        
+       
+
     }
 
     public void Start()

@@ -5,8 +5,22 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip playerDead, playerJump;
-    static AudioSource audioSrc;
+    public static AudioClip playerDead, playerJump, playerLand,nextLevel,music;
+    public static AudioSource audioSrc, musicSrc;
+    private static bool created = false;
+
+    private void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -14,8 +28,19 @@ public class SoundManagerScript : MonoBehaviour
         
         playerJump = Resources.Load<AudioClip>("playerJump");
         playerDead = Resources.Load<AudioClip>("playerDead");
+        playerLand = Resources.Load<AudioClip>("playerLand");
+        nextLevel = Resources.Load<AudioClip>("Sweep");
+        music = Resources.Load<AudioClip>("Music");
 
         audioSrc = GetComponent<AudioSource>();
+        musicSrc = GetComponent<AudioSource>();
+
+        musicSrc.loop = true;
+        musicSrc.clip = music;
+        musicSrc.Play();
+
+
+
     }
 
     // Update is called once per frame
@@ -24,8 +49,6 @@ public class SoundManagerScript : MonoBehaviour
       
 
     }
-
-
 
     public static void PlaySound (string clip)
     {
@@ -37,9 +60,13 @@ public class SoundManagerScript : MonoBehaviour
             case "playerDead":
                 audioSrc.PlayOneShot(playerDead);
                 break;
+            case "playerLand":
+                audioSrc.PlayOneShot(playerLand);
+                break;
+            case "nextLevel":
+                audioSrc.PlayOneShot(nextLevel);
+                break;
         }
     }
 
-
-        
 }

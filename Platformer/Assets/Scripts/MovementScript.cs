@@ -8,15 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
-
     Animator animator;
     Rigidbody2D rb;
     public float speed;
     public bool facingRight;
     public float maxSpeed = 10f;
 
-    bool grounded = false;
-    public LayerMask whatIsGround;
     public float jumpForce = 150f;
     GameManager gm;
     
@@ -34,8 +31,6 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
             float move = Input.GetAxis("Horizontal");
             animator.SetFloat("speed", Mathf.Abs(move));
 
@@ -57,19 +52,15 @@ public class MovementScript : MonoBehaviour
 
     private void Update()
     {
-
-        if ((rb.velocity.y < 0.01 && rb.velocity.y > -0.01) && Input.GetKeyDown(KeyCode.Space)) 
+        if ((rb.velocity.y < 0.01 && rb.velocity.y > -0.01) && Input.GetKeyDown(KeyCode.Space))
         {
-            SoundManagerScript.PlaySound("playerJump");
+           SoundManagerScript.PlaySound("playerJump");
             rb.AddForce(new Vector2(0, jumpForce));
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
             gm.Death();
         }
-        
-        
-
     }
 
 
@@ -85,12 +76,8 @@ public class MovementScript : MonoBehaviour
     {
         if(collision.collider.tag.Equals("Enemy"))
         {
-            
-       SoundManagerScript.PlaySound("playerDead");
-       
-            Thread.Sleep(230);
-            gm.Death();
-           
+            SoundManagerScript.PlaySound("playerDead");
+                gm.Death();
         }
     }
 
