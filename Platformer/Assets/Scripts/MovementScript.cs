@@ -59,8 +59,8 @@ public class MovementScript : MonoBehaviour
 
         if ((rb.velocity.y < 0.01 && rb.velocity.y > -0.01) && Input.GetKeyDown(KeyCode.Space)) 
         {
+            SoundManagerScript.PlaySound("playerJump");
             rb.AddForce(new Vector2(0, jumpForce));
-           
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -83,7 +83,9 @@ public class MovementScript : MonoBehaviour
     {
         if(collision.collider.tag.Equals("Enemy"))
         {
+
             gm.Death();
+           
         }
     }
 

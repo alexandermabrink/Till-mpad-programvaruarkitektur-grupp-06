@@ -34,17 +34,20 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
+        
         //loading first level
         SceneManager.LoadScene("Level1");
-
+        SoundManagerScript.PlaySound("playerDead");
         //resetting time
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
         timerScript.Reset();
+        
     }
 
     public void Start()
     {
+        
         //Removing UI after start pressed
         GameObject UI = GameObject.FindGameObjectWithTag("userInterface");
         UI.SetActive(false);
