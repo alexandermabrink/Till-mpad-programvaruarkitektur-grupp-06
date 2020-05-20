@@ -10,8 +10,8 @@ public class TimerScript : MonoBehaviour
 {
 
     public Text timerLabel;
-    private static float time;
-    private static Boolean startTime = false;
+    private float time;
+    private Boolean startTime = false;
     void Start()
     {
      
