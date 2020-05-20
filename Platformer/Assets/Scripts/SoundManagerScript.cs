@@ -35,7 +35,7 @@ public class SoundManagerScript : MonoBehaviour
                 audioSrc.PlayOneShot(playerJump);
                 break;
             case "playerDead":
-                audioSrc.PlayOneShot(playerJump);
+                audioSrc.PlayOneShot(playerDead);
                 break;
         }
     }

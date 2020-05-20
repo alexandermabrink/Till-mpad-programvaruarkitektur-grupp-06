@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         
         //loading first level
         SceneManager.LoadScene("Level1");
-        SoundManagerScript.PlaySound("playerDead");
         //resetting time
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();

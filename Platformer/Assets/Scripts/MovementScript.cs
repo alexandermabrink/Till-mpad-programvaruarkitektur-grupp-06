@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,8 +18,8 @@ public class MovementScript : MonoBehaviour
     bool grounded = false;
     public LayerMask whatIsGround;
     public float jumpForce = 150f;
-     GameManager gm;
-        
+    GameManager gm;
+    
 
 
     // Start is called before the first frame update
@@ -67,6 +68,7 @@ public class MovementScript : MonoBehaviour
             gm.Death();
         }
         
+        
 
     }
 
@@ -83,7 +85,10 @@ public class MovementScript : MonoBehaviour
     {
         if(collision.collider.tag.Equals("Enemy"))
         {
-
+            
+       SoundManagerScript.PlaySound("playerDead");
+       
+            Thread.Sleep(230);
             gm.Death();
            
         }
