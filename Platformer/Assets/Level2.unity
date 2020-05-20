@@ -2325,8 +2325,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1626782772
-BoxCollider2D:
+--- !u!60 &1626782772
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2348,9 +2348,33 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42999998, y: -0.42999998}
+      - {x: 0.5, y: -0.39}
+      - {x: 0.59, y: -0.34}
+      - {x: 0.64, y: -0.29999998}
+      - {x: 0.64, y: -0.24}
+      - {x: 0.61, y: -0.19}
+      - {x: 0.41, y: 0.099999994}
+      - {x: 0.34, y: 0.19999999}
+      - {x: 0.17999999, y: 0.42999998}
+      - {x: 0.06, y: 0.59}
+      - {x: 0.02, y: 0.64}
+      - {x: -0.02, y: 0.64}
+      - {x: -0.04, y: 0.62}
+      - {x: -0.29, y: 0.26999998}
+      - {x: -0.59, y: -0.17}
+      - {x: -0.64, y: -0.24}
+      - {x: -0.64, y: -0.29999998}
+      - {x: -0.59, y: -0.34}
+      - {x: -0.26999998, y: -0.52}
+      - {x: -0.17999999, y: -0.57}
+      - {x: -0.049999997, y: -0.64}
+      - {x: 0.04, y: -0.64}
+      - {x: 0.11, y: -0.61}
+      - {x: 0.26999998, y: -0.52}
+      - {x: 0.34, y: -0.48}
 --- !u!212 &1626782773
 SpriteRenderer:
   m_ObjectHideFlags: 0
