@@ -1008,8 +1008,8 @@ Transform:
   m_Father: {fileID: 474315892}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &887802277
-BoxCollider2D:
+--- !u!60 &887802277
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1031,9 +1031,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.64, y: 0.64}
+      - {x: -0.64, y: -0.64}
+      - {x: -0.59, y: -0.64}
+      - {x: 0.64, y: -0.02}
+      - {x: 0.64, y: 0.03}
+      - {x: -0.57, y: 0.64}
 --- !u!1 &942494913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,8 +1249,8 @@ Transform:
   m_Father: {fileID: 474315892}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!61 &979395325
-BoxCollider2D:
+--- !u!60 &979395325
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1267,9 +1272,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.64, y: 0.64}
+      - {x: -0.64, y: -0.64}
+      - {x: -0.59, y: -0.64}
+      - {x: 0.64, y: -0.02}
+      - {x: 0.64, y: 0.03}
+      - {x: -0.57, y: 0.64}
 --- !u!1001 &1005493869
 PrefabInstance:
   m_ObjectHideFlags: 0
