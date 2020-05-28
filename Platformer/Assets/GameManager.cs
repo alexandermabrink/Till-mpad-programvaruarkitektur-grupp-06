@@ -19,13 +19,15 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        
+
         //Getting time and sending to server
         GameObject timer = GameObject.FindGameObjectWithTag("timerText");
         TimerScript timerScript = timer.GetComponent<TimerScript>();
         HttpClient httpClient = new HttpClient();
+        if (timerScript.getTime() != "0" ) { 
         httpClient.GetAsync("http://amirs.pro:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
         Debug.Log("http://localhost:5555/highscoreSet?name=" + Environment.MachineName + "&time=" + timerScript.getTime());
+        }
       
 
         Death();
